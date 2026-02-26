@@ -1,0 +1,21 @@
+server:
+  port: 8081
+
+spring:
+  application:
+    name: authenticate_service
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    username: admin
+    password: admin123
+    url: jdbc:postgresql://localhost:5432/auth_db
+  jpa:
+    generate-ddl: false
+    hibernate:
+      ddl-auto: update
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+
