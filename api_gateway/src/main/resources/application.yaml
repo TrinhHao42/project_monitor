@@ -19,6 +19,11 @@ spring:
               uri: http://localhost:8081
               predicates:
                 - Path=/auth/**
+              filters:
+                - name: CircuitBreaker
+                  args:
+                    name: authenticate_service
+                    fallbackUri: forward:/fallback/auth
   data:
     redis:
       host: localhost
